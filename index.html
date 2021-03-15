@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Коллекция CD</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Коллекция CD</h1>
+        <hr>
+        <div class="row">
+          <div class="col-2">
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">Добавить новый</button>
+          </div>
+          <div class="col-2">
+              <select id="select_author" class="form-select"></select>
+          </div>
+          <div class="col-2">
+            <select id="year_sort" class="form-select"> 
+              <option disabled selected>По году выпуска</option>
+              <option value="">Сброс</option>
+              <option value="asc">По возрастанию</option>
+              <option value="desc">По убыванию</option>
+            </select>
+        </div>
+          
+        </div>
+        <div class="row">
+          <div class="col-6">
+            <div id="collections" class="d-flex flex-column bd-highlight mb-3">Записей не найдено  
+            </div>
+          </div>
+          <div class="col-6">
+            <div id="album_desc" class="bd-highlight mb-3">
+            </div>
+          </div>
+      </div>
+    </div>
+
+<!-- модальное окно добавления/редактирования -->
+<div class="modal fade " id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Добавить новый альбом</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <form id="add_new">
+                <div class="mb-3">
+                  <label for="album_name" class="form-label">Название альбома</label>
+                  <input type="text" class="form-control" id="album_name" name="album_name" >
+                </div>
+                <div class="mb-3">
+                    <label for="album_author" class="form-label">Название артиста</label>
+                    <input type="text" class="form-control" id="album_author" name="album_author" >
+                  </div>
+                  <div class="mb-3">
+                    <label for="album_year" class="form-label">Год выпуска</label>
+                    <input type="text" class="form-control" id="album_year" name="album_year" >
+                  </div>
+                  <div class="mb-3">
+                    <label for="album_duration" class="form-label">Длительность альбома (минут)</label>
+                    <input type="text" class="form-control" id="album_duration" name="album_duration" >
+                  </div>
+                  <div class="mb-3">
+                    <label for="purchase_date" class="form-label">Дата покупки</label>
+                    <input type="text" class="form-control" id="purchase_date" name="purchase_date" >
+                  </div>
+                  <div class="mb-3">
+                    <label for="price" class="form-label">Стоимость покупки</label>
+                    <input type="text" class="form-control" id="price" name="price" >
+                  </div>
+                  <div class="mb-3">
+                    <label for="" class="form-label">Код хранилища (номер комнаты : номер стойки : номер полки)</label>
+                    <div class="row">
+                        <div class="col">
+                            <input type="text" class="form-control" id="number_rum" name="number_rum" placeholder="Комната">
+                        </div>
+                        <div class="col">
+                            <input type="text" class="form-control" id="number_rack" name="number_rack" placeholder="Стойка">
+                        </div>
+                        <div class="col">
+                            <input type="text" class="form-control" id="number_shelf" name="number_shelf" placeholder="Полка">
+                        </div>
+                      </div>
+                  </div>
+                  <div class="mb-3">
+                    <label for="file" class="form-label">Загрузить обложку</label>
+                    <input type="file" class="form-control" id="file" name="file" >
+                  </div>
+                <input type="hidden" id="type_f" name="type_f" value="add">
+                <button type="submit" class="btn btn-primary">Добавить</button>
+            </form>
+            <div class="message-block"></div>
+        </div>
+      
+      </div>
+    </div>
+  </div>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/script.js"></script>
+</body>
+</html>
